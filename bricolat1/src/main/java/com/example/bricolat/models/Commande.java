@@ -12,7 +12,7 @@ public class Commande implements Serializable{
 	private Date date;
 	private String Etat;
 	private String AdresseLiv;
-	private Boolean Regler;
+	private Boolean Regle;
 	
 	public Commande() {
 		super();
@@ -23,7 +23,7 @@ public class Commande implements Serializable{
 		this.date = date;
 		Etat = etat;
 		AdresseLiv = adresseLiv;
-		Regler = regler;
+		Regle = regler;
 	}
 
 	public String getIdCommande() {
@@ -59,11 +59,11 @@ public class Commande implements Serializable{
 	}
 
 	public Boolean getRegler() {
-		return Regler;
+		return Regle;
 	}
 
 	public void setRegler(Boolean regler) {
-		Regler = regler;
+		Regle = regler;
 	}
 	
 	
