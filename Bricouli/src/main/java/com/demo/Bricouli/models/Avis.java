@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 @Entity
 public class Avis implements Serializable {
 	@Id
@@ -13,6 +14,11 @@ public class Avis implements Serializable {
 	private double idAvis;
 	private String Message;
 	private int Stars;
+	
+	@ManyToOne
+	private User Client;
+	
+
 	public Avis() {
 		super();
 	}

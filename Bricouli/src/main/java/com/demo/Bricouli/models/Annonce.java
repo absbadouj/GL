@@ -2,6 +2,8 @@ package com.demo.Bricouli.models;
 
 import java.io.Serializable;
 import java.sql.Blob;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
@@ -10,7 +12,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.OneToMany;
 
 @Entity
 @Inheritance(strategy=InheritanceType.JOINED)
@@ -26,6 +30,12 @@ public class Annonce implements Serializable{
 	private Double Note;
 	private Boolean Valable;
 	private Blob Image;
+	
+	@OneToMany
+	private List<Avis> avis = new ArrayList<>();
+	
+	@ManyToOne
+	private Annonceur annonceur;
 	
 	public Annonce() {
 		super();

@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Devis implements Serializable {
@@ -18,6 +19,12 @@ public class Devis implements Serializable {
 	private String Message;
 	private Date date;
 	private Date heure;
+	
+	@OneToOne
+	private Annonce annonce;
+	
+	@OneToOne
+	private User client;
 	
 	public Devis() {
 		super();
@@ -78,6 +85,15 @@ public class Devis implements Serializable {
 
 	public void setHeure(Date heure) {
 		this.heure = heure;
+	}
+
+
+	public User getClient() {
+		return client;
+	}
+
+	public void setClient(User client) {
+		this.client = client;
 	}
 	
 	

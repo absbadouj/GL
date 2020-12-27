@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Commande implements Serializable{
@@ -17,6 +19,15 @@ public class Commande implements Serializable{
 	private String Etat;
 	private String AdresseLiv;
 	private Boolean Regle;
+	
+	@OneToOne
+	private Devis devis;
+	
+	@ManyToOne
+	 private User client;
+	
+	@ManyToOne
+	private Annonce annonce;
 	
 	public Commande() {
 		super();
@@ -68,6 +79,30 @@ public class Commande implements Serializable{
 
 	public void setRegler(Boolean regler) {
 		Regle = regler;
+	}
+
+	public Boolean getRegle() {
+		return Regle;
+	}
+
+	public void setRegle(Boolean regle) {
+		Regle = regle;
+	}
+
+	public Devis getDevis() {
+		return devis;
+	}
+
+	public void setDevis(Devis devis) {
+		this.devis = devis;
+	}
+
+	public User getClient() {
+		return client;
+	}
+
+	public void setClient(User client) {
+		this.client = client;
 	}
 	
 	

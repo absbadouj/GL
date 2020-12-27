@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Facture implements Serializable{
@@ -14,6 +15,9 @@ public class Facture implements Serializable{
 	private double IdFacture;
 	private Double Montant;
 	private String Etat;
+	
+	@OneToOne
+	private Commande commande;
 	
 	public Facture() {
 		super();
@@ -48,6 +52,16 @@ public class Facture implements Serializable{
 	public void setEtat(String etat) {
 		Etat = etat;
 	}
+
+	public Commande getCommande() {
+		return commande;
+	}
+
+	public void setCommande(Commande commande) {
+		this.commande = commande;
+	}
+	
+	
 	
 	
 	
