@@ -1,18 +1,19 @@
-package com.example.bricolat.models;
+package com.demo.Bricouli.models;
 
 import java.io.Serializable;
 import java.sql.Blob;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
+@DiscriminatorValue("V")
 public class Annonceur extends User implements Serializable{
-	@Id
-	  @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String IdAnnonceur;
+	
+	private double IdAnnonceur;
 	private String Designation;
 	private String Siteweb;
 	private String Apropos;
@@ -33,11 +34,11 @@ public class Annonceur extends User implements Serializable{
 		Avis = avis;
 	}
 
-	public String getIdAnnonceur() {
+	public double getIdAnnonceur() {
 		return IdAnnonceur;
 	}
 
-	public void setIdAnnonceur(String idAnnonceur) {
+	public void setIdAnnonceur(double idAnnonceur) {
 		IdAnnonceur = idAnnonceur;
 	}
 

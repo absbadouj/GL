@@ -1,18 +1,24 @@
-package com.example.bricolat.models;
+package com.demo.Bricouli.models;
 
 import java.io.Serializable;
 import java.sql.Blob;
 
+import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.MappedSuperclass;
 
 @Entity
+@Inheritance(strategy=InheritanceType.JOINED)
+@DiscriminatorColumn(name="Annonce_type")
 public class Annonce implements Serializable{
 	@Id
 	  @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String idAnnonce;
+	private Double idAnnonce;
 	private String Titre;
 	private String Subtitle;
 	private String Ville;
@@ -37,11 +43,11 @@ public class Annonce implements Serializable{
 		Image = image;
 	}
 
-	public String getIdAnnonce() {
+	public Double getIdAnnonce() {
 		return idAnnonce;
 	}
 
-	public void setIdAnnonce(String idAnnonce) {
+	public void setIdAnnonce(Double idAnnonce) {
 		this.idAnnonce = idAnnonce;
 	}
 

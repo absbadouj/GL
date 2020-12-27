@@ -1,4 +1,4 @@
-package com.example.bricolat.models;
+package com.demo.Bricouli.models;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -12,7 +12,7 @@ import javax.persistence.Id;
 public class Devis implements Serializable {
 	@Id
 	  @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String IdDevis;
+	private double IdDevis;
 	private Double Montant;
 	private Boolean Status;
 	private String Message;
@@ -32,11 +32,11 @@ public class Devis implements Serializable {
 		this.heure = heure;
 	}
 
-	public String getIdDevis() {
+	public double getIdDevis() {
 		return IdDevis;
 	}
 
-	public void setIdDevis(String idDevis) {
+	public void setIdDevis(double idDevis) {
 		IdDevis = idDevis;
 	}
 

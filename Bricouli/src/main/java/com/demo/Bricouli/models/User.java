@@ -1,18 +1,24 @@
-package com.example.bricolat.models;
+package com.demo.Bricouli.models;
 
 import java.io.Serializable;
 import java.sql.Blob;
 
+import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.MappedSuperclass;
 
 @Entity
+@Inheritance(strategy=InheritanceType.JOINED)
+@DiscriminatorColumn(name="user_type")
 public class User implements Serializable {
 	@Id
 	  @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String Iduser;
+	private Double Iduser;
 	private String Nom;
 	private String Prenom;
 	private String Email;
@@ -45,11 +51,11 @@ public class User implements Serializable {
 		super();
 	}
 
-	public String getIduser() {
+	public double getIduser() {
 		return Iduser;
 	}
 
-	public void setIduser(String iduser) {
+	public void setIduser(double iduser) {
 		Iduser = iduser;
 	}
 

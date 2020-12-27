@@ -1,4 +1,4 @@
-package com.example.bricolat.models;
+package com.demo.Bricouli.models;
 
 import java.io.Serializable;
 
@@ -10,7 +10,7 @@ import javax.persistence.Id;
 public class Avis implements Serializable {
 	@Id
 	  @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String idAvis;
+	private double idAvis;
 	private String Message;
 	private int Stars;
 	public Avis() {
@@ -21,10 +21,10 @@ public class Avis implements Serializable {
 		Message = message;
 		Stars = stars;
 	}
-	public String getIdAvis() {
+	public double getIdAvis() {
 		return idAvis;
 	}
-	public void setIdAvis(String idAvis) {
+	public void setIdAvis(double idAvis) {
 		this.idAvis = idAvis;
 	}
 	public String getMessage() {

@@ -1,17 +1,18 @@
-package com.example.bricolat.models;
+package com.demo.Bricouli.models;
 
 import java.io.Serializable;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
+@DiscriminatorValue("M")
 public class AnnonceMateriel extends Annonce implements Serializable {
-	@Id
-	  @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String id;
+	
+	private double id;
 	private String Type;
 	private Double Prix;
 	
@@ -19,11 +20,11 @@ public class AnnonceMateriel extends Annonce implements Serializable {
 		super();
 	}
 
-	public String getId() {
+	public double getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(double id) {
 		this.id = id;
 	}
 

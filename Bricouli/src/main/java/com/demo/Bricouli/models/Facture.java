@@ -1,4 +1,4 @@
-package com.example.bricolat.models;
+package com.demo.Bricouli.models;
 
 import java.io.Serializable;
 
@@ -11,7 +11,7 @@ import javax.persistence.Id;
 public class Facture implements Serializable{
 	@Id
 	  @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String IdFacture;
+	private double IdFacture;
 	private Double Montant;
 	private String Etat;
 	
@@ -25,11 +25,11 @@ public class Facture implements Serializable{
 		Etat = etat;
 	}
 
-	public String getIdFacture() {
+	public double getIdFacture() {
 		return IdFacture;
 	}
 
-	public void setIdFacture(String idFacture) {
+	public void setIdFacture(double idFacture) {
 		IdFacture = idFacture;
 	}
 
