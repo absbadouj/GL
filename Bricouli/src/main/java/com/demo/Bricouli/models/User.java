@@ -18,7 +18,7 @@ import javax.persistence.MappedSuperclass;
 public class User implements Serializable {
 	@Id
 	  @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Double Iduser;
+	private Long Iduser;
 	private String Nom;
 	private String Prenom;
 	private String Email;
@@ -51,11 +51,11 @@ public class User implements Serializable {
 		super();
 	}
 
-	public double getIduser() {
+	public Long getIduser() {
 		return Iduser;
 	}
 
-	public void setIduser(double iduser) {
+	public void setIduser(Long iduser) {
 		Iduser = iduser;
 	}
 

@@ -33,6 +33,8 @@ public class Annonceur extends User implements Serializable{
 		Apropos = apropos;
 		Avis = avis;
 	}
+	
+	public Annonceur() {}
 
 	public double getIdAnnonceur() {
 		return IdAnnonceur;
