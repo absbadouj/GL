@@ -57,6 +57,14 @@ public class UsersService {
 	}
 	
 	
+	// change password
+	public int changepasseword(String email, String passe) {
+		User u = userRepository.findByEmail(email);
+		u.setPasse(passe);
+		userRepository.save(u);
+		return 0;
+	}
+	
 	
 	
 	

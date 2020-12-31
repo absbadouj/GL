@@ -23,8 +23,9 @@ public class AnnoncesService {
 	
 	@Autowired AnnonceRepository annonceRepository;
 	@Autowired AnnonceSRepository annonceSRepository;
-	@Autowired AnnonceurRepository annoncuerRepository;
 	@Autowired AnnonceMRepository annonceMRepository;
+	@Autowired AnnonceurRepository annoncuerRepository;
+	
 	
 	
 	// get all annonces 
@@ -65,8 +66,21 @@ public class AnnoncesService {
 			 return annonceMRepository.findAll();
 		}
 		
+	// get annonces by category 
+		public List<Annonce> getbycategory(String s){
+			return annonceRepository.findByCategorie(s);
+		}
 		
-		
+	// get annonces by title 
+		public List<Annonce> getbytitle(String s){
+			return annonceRepository.findByTitreContaining(s);
+		}
+	
+	// get annonce non valide pour admin
+		public List<Annonce> getbyvalable(boolean v){
+			return annonceRepository.findByValable(v);
+		}
+
 		
 
 }

@@ -23,13 +23,15 @@ public class Annonce implements Serializable{
 	@Id
 	  @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idAnnonce;
-	private String Titre;
-	private String Subtitle;
-	private String Ville;
+	private String titre;
+	private String subtitle;
+	private String ville;
 	private String Description;
-	private Double Note;
-	private Boolean Valable;
+	private Double note;
+	private Boolean valable;
+	private String categorie;
 	private Blob Image;
+	private int duree;
 	
 	@OneToMany
 	private List<Avis> avis = new ArrayList<>();
@@ -44,12 +46,12 @@ public class Annonce implements Serializable{
 	public Annonce(String titre, String subtitle, String ville, String description, Double note, Boolean valable,
 			Blob image) {
 		super();
-		Titre = titre;
-		Subtitle = subtitle;
-		Ville = ville;
+		titre = titre;
+		subtitle = subtitle;
+		ville = ville;
 		Description = description;
-		Note = note;
-		Valable = valable;
+		note = note;
+		valable = valable;
 		Image = image;
 	}
 
@@ -61,28 +63,28 @@ public class Annonce implements Serializable{
 		this.idAnnonce = idAnnonce;
 	}
 
-	public String getTitre() {
-		return Titre;
+	public String gettitre() {
+		return titre;
 	}
 
-	public void setTitre(String titre) {
-		Titre = titre;
+	public void settitre(String titre) {
+		titre = titre;
 	}
 
-	public String getSubtitle() {
-		return Subtitle;
+	public String getsubtitle() {
+		return subtitle;
 	}
 
-	public void setSubtitle(String subtitle) {
-		Subtitle = subtitle;
+	public void setsubtitle(String subtitle) {
+		subtitle = subtitle;
 	}
 
-	public String getVille() {
-		return Ville;
+	public String getville() {
+		return ville;
 	}
 
-	public void setVille(String ville) {
-		Ville = ville;
+	public void setville(String ville) {
+		ville = ville;
 	}
 
 	public String getDescription() {
@@ -93,20 +95,20 @@ public class Annonce implements Serializable{
 		Description = description;
 	}
 
-	public Double getNote() {
-		return Note;
+	public Double getnote() {
+		return note;
 	}
 
-	public void setNote(Double note) {
-		Note = note;
+	public void setnote(Double note) {
+		note = note;
 	}
 
-	public Boolean getValable() {
-		return Valable;
+	public Boolean getvalable() {
+		return valable;
 	}
 
-	public void setValable(Boolean valable) {
-		Valable = valable;
+	public void setvalable(Boolean valable) {
+		valable = valable;
 	}
 
 	public Blob getImage() {
@@ -132,6 +134,65 @@ public class Annonce implements Serializable{
 	public void setAnnonceur(Annonceur annonceur) {
 		this.annonceur = annonceur;
 	}
+
+	public String getcategorie() {
+		return categorie;
+	}
+
+	public void setcategorie(String categorie) {
+		categorie = categorie;
+	}
+
+	public String getTitre() {
+		return titre;
+	}
+
+	public void setTitre(String titre) {
+		this.titre = titre;
+	}
+
+	public String getSubtitle() {
+		return subtitle;
+	}
+
+	public void setSubtitle(String subtitle) {
+		this.subtitle = subtitle;
+	}
+
+	public String getVille() {
+		return ville;
+	}
+
+	public void setVille(String ville) {
+		this.ville = ville;
+	}
+
+	public Double getNote() {
+		return note;
+	}
+
+	public void setNote(Double note) {
+		this.note = note;
+	}
+
+	public String getCategorie() {
+		return categorie;
+	}
+
+	public void setCategorie(String categorie) {
+		this.categorie = categorie;
+	}
+
+	public int getDuree() {
+		return duree;
+	}
+
+	public void setDuree(int duree) {
+		this.duree = duree;
+	}
+	
+	
+	
 	
 	
 	

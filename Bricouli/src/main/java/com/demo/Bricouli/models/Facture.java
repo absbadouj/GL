@@ -12,7 +12,7 @@ import javax.persistence.OneToOne;
 public class Facture implements Serializable{
 	@Id
 	  @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private double IdFacture;
+	private Long IdFacture;
 	private Double Montant;
 	private String Etat;
 	
@@ -29,11 +29,11 @@ public class Facture implements Serializable{
 		Etat = etat;
 	}
 
-	public double getIdFacture() {
+	public Long getIdFacture() {
 		return IdFacture;
 	}
 
-	public void setIdFacture(double idFacture) {
+	public void setIdFacture(Long idFacture) {
 		IdFacture = idFacture;
 	}
 

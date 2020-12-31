@@ -21,7 +21,7 @@ public class User implements Serializable {
 	private Long Iduser;
 	private String Nom;
 	private String Prenom;
-	private String Email;
+	private String email;
 	private String Cin;
 	private String Tel;
 	private String Adresse;
@@ -36,7 +36,7 @@ public class User implements Serializable {
 		super();
 		Nom = nom;
 		Prenom = prenom;
-		Email = email;
+		email = email;
 		Cin = cin;
 		Tel = tel;
 		Adresse = adresse;
@@ -75,12 +75,12 @@ public class User implements Serializable {
 		Prenom = prenom;
 	}
 
-	public String getEmail() {
-		return Email;
+	public String getemail() {
+		return email;
 	}
 
-	public void setEmail(String email) {
-		Email = email;
+	public void setemail(String email) {
+		email = email;
 	}
 
 	public String getCin() {

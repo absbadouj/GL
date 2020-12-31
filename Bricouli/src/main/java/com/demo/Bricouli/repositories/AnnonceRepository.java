@@ -12,6 +12,12 @@ import com.demo.Bricouli.models.AnnonceService;
 @Repository
 public interface AnnonceRepository extends JpaRepository<Annonce, Long>{
 
+	
+
+	List<Annonce> findByCategorie(String s);
+	List<Annonce> findByTitreContaining(String s);
+	List<Annonce> findByValable(boolean v);
+	
    
 
 }

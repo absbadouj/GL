@@ -10,6 +10,6 @@ import com.demo.Bricouli.models.Commande;
 @Repository
 public interface CommandeRepository extends JpaRepository<Commande, Long>{
 
-	List<Commande> findByEtat(String s);
+
 
 }

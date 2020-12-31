@@ -12,7 +12,7 @@ import javax.persistence.OneToOne;
 @Entity
 public class Devis implements Serializable {
 	@Id
-	  @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long IdDevis;
 	private Double Montant;
 	private Boolean Status;
@@ -95,6 +95,15 @@ public class Devis implements Serializable {
 	public void setClient(User client) {
 		this.client = client;
 	}
+
+	public Annonce getAnnonce() {
+		return annonce;
+	}
+
+	public void setAnnonce(Annonce annonce) {
+		this.annonce = annonce;
+	}
+	
 	
 	
 	

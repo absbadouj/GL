@@ -13,12 +13,14 @@ import javax.persistence.OneToOne;
 @Entity
 public class Commande implements Serializable{
 	@Id
-	  @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idCommande;
 	private Date date;
 	private String Etat;
 	private String AdresseLiv;
 	private Boolean Regle;
+	private Date DateLiv;
+	private String DateLivPrevu;
 	
 	@OneToOne
 	private Devis devis;
@@ -104,7 +106,29 @@ public class Commande implements Serializable{
 	public void setClient(User client) {
 		this.client = client;
 	}
-	
-	
+
+	public Date getDateLiv() {
+		return DateLiv;
+	}
+
+	public void setDateLiv(Date dateLiv) {
+		DateLiv = dateLiv;
+	}
+
+	public Annonce getAnnonce() {
+		return annonce;
+	}
+
+	public void setAnnonce(Annonce annonce) {
+		this.annonce = annonce;
+	}
+
+	public String getDateLivPrevu() {
+		return DateLivPrevu;
+	}
+
+	public void setDateLivPrevu(String dateLivPrevu) {
+		DateLivPrevu = dateLivPrevu;
+	}
 	
 }
