@@ -7,9 +7,11 @@ import org.springframework.stereotype.Service;
 
 import com.demo.Bricouli.models.Annonce;
 import com.demo.Bricouli.models.Commande;
+import com.demo.Bricouli.models.Devis;
 import com.demo.Bricouli.models.User;
 import com.demo.Bricouli.repositories.AnnonceRepository;
 import com.demo.Bricouli.repositories.CommandeRepository;
+import com.demo.Bricouli.repositories.DevisRepository;
 import com.demo.Bricouli.repositories.UserRepository;
 
 @Service
@@ -18,6 +20,7 @@ public class CommandesService {
 	@Autowired CommandeRepository commandeRepository;
 	@Autowired AnnonceRepository annonceRepository;
 	@Autowired UserRepository userRepository;
+	@Autowired DevisRepository devisRepository;
 	
 	// get all orders ordered for admin 
 	public List<Commande> commandelatest(){
@@ -40,10 +43,11 @@ public class CommandesService {
 		return commandeRepository.save(c);
 	}
 	
-	public Commande PasserCommade(Long idClient, Long idAnnonce, Commande commande) {
+	public Commande PasserCommade(Long idClient, Long iddevis, Commande commande) {
 		User u = userRepository.findById(idClient).get();
-		Annonce a = annonceRepository.findById(idAnnonce).get();
+		Devis d = devisRepository.findById(iddevis).get();
 		commande.setClient(u);
+		commande.setDevis(d);
 		return commandeRepository.save(commande);
 		
 	}

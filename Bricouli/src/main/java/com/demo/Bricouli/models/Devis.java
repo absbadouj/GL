@@ -13,7 +13,7 @@ import javax.persistence.OneToOne;
 public class Devis implements Serializable {
 	@Id
 	  @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private double IdDevis;
+	private Long IdDevis;
 	private Double Montant;
 	private Boolean Status;
 	private String Message;
@@ -43,7 +43,7 @@ public class Devis implements Serializable {
 		return IdDevis;
 	}
 
-	public void setIdDevis(double idDevis) {
+	public void setIdDevis(Long idDevis) {
 		IdDevis = idDevis;
 	}
 
