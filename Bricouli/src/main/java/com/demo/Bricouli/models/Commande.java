@@ -14,7 +14,7 @@ import javax.persistence.OneToOne;
 public class Commande implements Serializable{
 	@Id
 	  @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private double idCommande;
+	private Long idCommande;
 	private Date date;
 	private String Etat;
 	private String AdresseLiv;
@@ -41,11 +41,11 @@ public class Commande implements Serializable{
 		Regle = regler;
 	}
 
-	public double getIdCommande() {
+	public Long getIdCommande() {
 		return idCommande;
 	}
 
-	public void setIdCommande(double idCommande) {
+	public void setIdCommande(Long idCommande) {
 		this.idCommande = idCommande;
 	}
 
