@@ -47,10 +47,10 @@ public class UsersController {
 	        return usersService.addseller(a);
 	 }
 	 
-	 @PostMapping("/update/seller/{id}")
+	/* @PostMapping("/update/seller/{id}")
 	    public User becomeseller(@RequestBody Annonceur a, @PathVariable Long id) {
 	        return usersService.updatetoseller(a,id);
-	 }
+	 } */
 	 
 
 }

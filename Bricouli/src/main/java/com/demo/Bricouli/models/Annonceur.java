@@ -13,7 +13,7 @@ import javax.persistence.Id;
 @DiscriminatorValue("V")
 public class Annonceur extends User implements Serializable{
 	
-	private double IdAnnonceur;
+	private Long IdAnnonceur;
 	private String Designation;
 	private String Siteweb;
 	private String Apropos;
@@ -38,11 +38,11 @@ public class Annonceur extends User implements Serializable{
 	
 	public Annonceur() {}
 
-	public double getIdAnnonceur() {
+	public Long getIdAnnonceur() {
 		return IdAnnonceur;
 	}
 
-	public void setIdAnnonceur(double idAnnonceur) {
+	public void setIdAnnonceur(Long idAnnonceur) {
 		IdAnnonceur = idAnnonceur;
 	}
 

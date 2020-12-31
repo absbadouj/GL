@@ -12,7 +12,7 @@ import javax.persistence.Id;
 @DiscriminatorValue("M")
 public class AnnonceMateriel extends Annonce implements Serializable {
 	
-	private double id;
+	private Long id;
 	private String Type;
 	private Double Prix;
 	
@@ -20,11 +20,11 @@ public class AnnonceMateriel extends Annonce implements Serializable {
 		super();
 	}
 
-	public double getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(double id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

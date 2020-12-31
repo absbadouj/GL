@@ -18,11 +18,11 @@ import javax.persistence.OneToMany;
 
 @Entity
 @Inheritance(strategy=InheritanceType.JOINED)
-@DiscriminatorColumn(name="Annonce_type")
+@DiscriminatorColumn(name="annoncetype")
 public class Annonce implements Serializable{
 	@Id
 	  @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Double idAnnonce;
+	private Long idAnnonce;
 	private String Titre;
 	private String Subtitle;
 	private String Ville;
@@ -53,11 +53,11 @@ public class Annonce implements Serializable{
 		Image = image;
 	}
 
-	public Double getIdAnnonce() {
+	public Long getIdAnnonce() {
 		return idAnnonce;
 	}
 
-	public void setIdAnnonce(Double idAnnonce) {
+	public void setIdAnnonce(Long idAnnonce) {
 		this.idAnnonce = idAnnonce;
 	}
 
@@ -116,6 +116,24 @@ public class Annonce implements Serializable{
 	public void setImage(Blob image) {
 		Image = image;
 	}
+
+	public List<Avis> getAvis() {
+		return avis;
+	}
+
+	public void setAvis(List<Avis> avis) {
+		this.avis = avis;
+	}
+
+	public Annonceur getAnnonceur() {
+		return annonceur;
+	}
+
+	public void setAnnonceur(Annonceur annonceur) {
+		this.annonceur = annonceur;
+	}
+	
+	
 	
 	
 }

@@ -41,12 +41,14 @@ public class UsersService {
 	}
 	
 	// update to seller 
-	public User updatetoseller(Annonceur user, Long id) {
+	 /* public User updatetoseller(Annonceur user, Long id) {
 		User u = userRepository.findById(id).get();
-		user.setIduser(u.getIduser());
-		return userRepository.save(user);
+		Annonceur a = new Annonceur();
+		a = 
+		u.(id);
+		 return annoncuer.save(u);
 		
-	}
+	} */
 	
 	// delete user 
 	public int deleteuser(Long id) {
