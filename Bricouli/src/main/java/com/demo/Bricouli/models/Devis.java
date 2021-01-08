@@ -26,6 +26,9 @@ public class Devis implements Serializable {
 	@OneToOne
 	private User client;
 	
+	@OneToOne
+	private DBFiles fichier;
+	
 	public Devis() {
 		super();
 	}
@@ -103,6 +106,16 @@ public class Devis implements Serializable {
 	public void setAnnonce(Annonce annonce) {
 		this.annonce = annonce;
 	}
+
+	public DBFiles getFichier() {
+		return fichier;
+	}
+
+	public void setFichier(DBFiles fichier) {
+		this.fichier = fichier;
+	}
+	
+	
 	
 	
 	

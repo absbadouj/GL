@@ -90,11 +90,12 @@ public class CommandesService {
 	// Avis 
 	// Ajouter un avis
 	
-	public Avis Ajouteravis(Long idclient, Long idcommande, String msg, int stars) {
+	/* public Avis Ajouteravis(Long idclient, Long idcommande, String msg, int stars) {
 		Commande c = commandeRepository.findById(idcommande).get();
 		User u = userRepository.findById(idclient).get();
 		Avis a = new Avis(msg,stars,u,c);
 		return avisRepository.save(a);
-	}
+	}*/
+	
 	
 }

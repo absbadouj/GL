@@ -10,7 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-@DiscriminatorValue("V")
+@DiscriminatorValue("Annonceur")
 public class Annonceur extends User implements Serializable{
 	
 	private Long IdAnnonceur;
@@ -20,14 +20,14 @@ public class Annonceur extends User implements Serializable{
 	private double Avis;
 	
 	public Annonceur(String nom, String prenom, String email, String cin, String tel, String adresse, String ville,
-			Boolean confirmed, String passe, Boolean annonceur, Blob image) {
-		super(nom, prenom, email, cin, tel, adresse, ville, confirmed, passe, annonceur, image);
+			Boolean confirmed, String passe, Boolean annonceur) {
+		super(nom, prenom, email, cin, tel, adresse, ville, confirmed, passe, annonceur);
 	}
 
 	public Annonceur(String nom, String prenom, String email, String cin, String tel, String adresse, String ville,
 			Boolean confirmed, String passe, Boolean annonceur, Blob image, String designation, String siteweb,
 			String apropos, double avis) {
-		super(nom, prenom, email, cin, tel, adresse, ville, confirmed, passe, annonceur, image);
+		super(nom, prenom, email, cin, tel, adresse, ville, confirmed, passe, annonceur);
 		Designation = designation;
 		Siteweb = siteweb;
 		Apropos = apropos;

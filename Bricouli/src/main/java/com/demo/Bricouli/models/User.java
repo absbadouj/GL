@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.OneToOne;
 
 @Entity
 @Inheritance(strategy=InheritanceType.JOINED)
@@ -29,14 +30,15 @@ public class User implements Serializable {
 	private Boolean Confirmed;
 	private String Passe;
 	private Boolean Annonceur;
-	private Blob Image;
+	@OneToOne
+	private DBFiles Image;
 	
 	public User(String nom, String prenom, String email, String cin, String tel, String adresse, String ville,
-			Boolean confirmed, String passe, Boolean annonceur, Blob image) {
+			Boolean confirmed, String passe, Boolean annonceur) {
 		super();
 		Nom = nom;
 		Prenom = prenom;
-		email = email;
+		this.email = email;
 		Cin = cin;
 		Tel = tel;
 		Adresse = adresse;
@@ -44,7 +46,7 @@ public class User implements Serializable {
 		Confirmed = confirmed;
 		Passe = passe;
 		Annonceur = annonceur;
-		Image = image;
+		
 	}
 
 	public User() {
@@ -80,7 +82,7 @@ public class User implements Serializable {
 	}
 
 	public void setemail(String email) {
-		email = email;
+		this.email = email;
 	}
 
 	public String getCin() {
@@ -139,15 +141,13 @@ public class User implements Serializable {
 		Annonceur = annonceur;
 	}
 
-	public Blob getImage() {
+	public DBFiles getImage() {
 		return Image;
 	}
 
-	public void setImage(Blob image) {
+	public void setImage(DBFiles image) {
 		Image = image;
 	}
-	
-	
-	
+
 
 }

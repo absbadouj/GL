@@ -12,7 +12,7 @@ import javax.persistence.ManyToOne;
 public class Avis implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private double idAvis;
+	private Long idAvis;
 	private String Message;
 	private int Stars;
 	private Date date;
@@ -40,10 +40,10 @@ public class Avis implements Serializable {
 		Client = client;
 		this.commande = commande;
 	}
-	public double getIdAvis() {
+	public Long getIdAvis() {
 		return idAvis;
 	}
-	public void setIdAvis(double idAvis) {
+	public void setIdAvis(Long idAvis) {
 		this.idAvis = idAvis;
 	}
 	public String getMessage() {

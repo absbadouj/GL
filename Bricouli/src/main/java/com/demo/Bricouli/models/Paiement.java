@@ -21,6 +21,9 @@ public class Paiement implements Serializable {
 	@OneToOne
 	private Commande commande;
 	
+	@OneToOne
+	private DBFiles fichier;
+	
 	public Paiement() {
 		super();
 	}
@@ -71,6 +74,16 @@ public class Paiement implements Serializable {
 	public void setCommande(Commande commande) {
 		this.commande = commande;
 	}
+
+	public DBFiles getFichier() {
+		return fichier;
+	}
+
+	public void setFichier(DBFiles fichier) {
+		this.fichier = fichier;
+	}
+	
+	
 	
 	
 	
