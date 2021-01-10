@@ -8,11 +8,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+
+
 @Entity
-@DiscriminatorValue("M")
+@DiscriminatorValue("AnnonceMateriel")
 public class AnnonceMateriel extends Annonce implements Serializable {
 	
-	private Long id;
 	private String Type;
 	private Double Prix;
 	
@@ -20,13 +21,15 @@ public class AnnonceMateriel extends Annonce implements Serializable {
 		super();
 	}
 
-	public Long getId() {
-		return id;
+
+	public AnnonceMateriel(String type, Double prix) {
+		super();
+		Type = type;
+		Prix = prix;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+
+
 
 	public String getType() {
 		return Type;

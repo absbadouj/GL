@@ -40,6 +40,14 @@ public class UsersService {
 		return annonceurRepository.save(a);
 	}
 	
+	// find by email and password
+	
+	public User connexion(String email, String password) {
+		User u = userRepository.findByEmailAndPasse(email,password);
+		if (u == null) return null;
+		else return u;
+	}
+	
 	// update to seller 
 	 /* public User updatetoseller(Annonceur user, Long id) {
 		User u = userRepository.findById(id).get();

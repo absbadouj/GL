@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,7 +19,7 @@ import com.demo.Bricouli.models.Avis;
 import com.demo.Bricouli.models.User;
 import com.demo.Bricouli.services.UsersService;
 
-
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/user")
 public class UsersController {
@@ -40,6 +41,12 @@ public class UsersController {
 	 @GetMapping("/users/sellers")
 	 public List<Annonceur> getvendeur(){ 
 			return usersService.sellers();
+	 }
+	 
+	 
+	 @GetMapping("/connexion/{email}/{passe}")
+	 public User getuserconnexion(@PathVariable String email, @PathVariable String passe){ 
+			return usersService.connexion(email,passe);
 	 }
 	 
 	 @PostMapping("/add/seller")

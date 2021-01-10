@@ -28,13 +28,13 @@ public class User implements Serializable {
 	private String Adresse;
 	private String Ville; 
 	private Boolean Confirmed;
-	private String Passe;
+	private String passe;
 	private Boolean Annonceur;
 	@OneToOne
 	private DBFiles Image;
 	
 	public User(String nom, String prenom, String email, String cin, String tel, String adresse, String ville,
-			Boolean confirmed, String passe, Boolean annonceur) {
+			Boolean confirmed, String Passe, Boolean annonceur) {
 		super();
 		Nom = nom;
 		Prenom = prenom;
@@ -44,7 +44,7 @@ public class User implements Serializable {
 		Adresse = adresse;
 		Ville = ville;
 		Confirmed = confirmed;
-		Passe = passe;
+		passe = Passe;
 		Annonceur = annonceur;
 		
 	}
@@ -126,11 +126,11 @@ public class User implements Serializable {
 	}
 
 	public String getPasse() {
-		return Passe;
+		return passe;
 	}
 
 	public void setPasse(String passe) {
-		Passe = passe;
+		this.passe = passe;
 	}
 
 	public Boolean getAnnonceur() {

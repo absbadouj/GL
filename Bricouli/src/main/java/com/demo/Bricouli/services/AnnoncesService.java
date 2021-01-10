@@ -33,6 +33,15 @@ public class AnnoncesService {
 			return annonceRepository.findAll();
 		}
 		
+	// add annonce 
+				public Annonce savingAnnonce(Annonce an, Long id){
+					Annonceur a = annoncuerRepository.findById(id).get();
+					Annonce annonce = new Annonce();
+					annonce = an;
+					an.setAnnonceur(a);
+					System.out.println(an);
+					return annonceRepository.save(annonce);
+			    }
 	// get an annonce 
 		
 		public Annonce getannonce(Long id){
@@ -44,6 +53,7 @@ public class AnnoncesService {
 		public AnnonceService savingAnnonceService(AnnonceService as, Long id){
 			Annonceur a = annoncuerRepository.findById(id).get();
 			as.setAnnonceur(a);
+			System.out.println(as);
 			return annonceSRepository.save(as);
 	    }
 		
@@ -52,6 +62,7 @@ public class AnnoncesService {
 		public AnnonceMateriel savingAnnonceMateriel(AnnonceMateriel am, Long id) {
 			Annonceur a = annoncuerRepository.findById(id).get();
 			am.setAnnonceur(a);
+			System.out.println(am);
 			return annonceMRepository.save(am);
 			
 		}
@@ -81,6 +92,13 @@ public class AnnoncesService {
 			return annonceRepository.findByValable(v);
 		}
 
+	// get all annonce seller
+		public List<Annonce> getannoncesseller(Long id){
+			Annonceur a = annoncuerRepository.findById(id).get();
+			return annonceRepository.findByAnnonceur(a);
+		}
+		
+		
 		
 
 }

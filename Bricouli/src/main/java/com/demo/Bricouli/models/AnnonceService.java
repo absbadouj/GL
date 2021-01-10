@@ -10,7 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-@DiscriminatorValue("S")
+@DiscriminatorValue("AnnonceService")
 public class AnnonceService extends Annonce implements Serializable{
 	
 	private String idService;
@@ -37,6 +37,8 @@ public class AnnonceService extends Annonce implements Serializable{
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	
 	
 	
 	
