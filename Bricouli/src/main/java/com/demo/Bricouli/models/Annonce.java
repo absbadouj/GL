@@ -35,6 +35,7 @@ public class Annonce implements Serializable{
 	private String categorie;
 	private int duree;
 	
+	
 	@OneToMany
 	private List<Avis> avis = new ArrayList<>();
 	

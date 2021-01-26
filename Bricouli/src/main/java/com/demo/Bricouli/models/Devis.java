@@ -14,11 +14,14 @@ public class Devis implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long IdDevis;
-	private Double Montant;
-	private Boolean Status;
-	private String Message;
+	private int montant;
+	private Boolean status;
+	private String message;
+	private String adresse;
 	private Date date;
-	private Date heure;
+	private Date time = new Date();
+	private String etat;
+	
 	
 	@OneToOne
 	private Annonce annonce;
@@ -29,20 +32,31 @@ public class Devis implements Serializable {
 	@OneToOne
 	private DBFiles fichier;
 	
+	@OneToOne
+	private User annonceur;
+	
+	
 	public Devis() {
 		super();
 	}
+	
+	
 
-	public Devis(Double montant, Boolean status, String message, Date date, Date heure) {
+	public Devis(int montant, Boolean status, String message, String adresse, Date date, Annonce annonce,
+			User client) {
 		super();
-		Montant = montant;
-		Status = status;
-		Message = message;
+		this.montant = montant;
+		this.status = status;
+		this.message = message;
+		this.adresse = adresse;
 		this.date = date;
-		this.heure = heure;
+		this.annonce = annonce;
+		this.client = client;
 	}
 
-	public double getIdDevis() {
+
+
+	public Long getIdDevis() {
 		return IdDevis;
 	}
 
@@ -50,28 +64,36 @@ public class Devis implements Serializable {
 		IdDevis = idDevis;
 	}
 
-	public Double getMontant() {
-		return Montant;
+	public int getMontant() {
+		return montant;
 	}
 
-	public void setMontant(Double montant) {
-		Montant = montant;
+	public void setMontant(int montant) {
+		this.montant = montant;
 	}
 
 	public Boolean getStatus() {
-		return Status;
+		return status;
 	}
 
 	public void setStatus(Boolean status) {
-		Status = status;
+		this.status = status;
 	}
 
 	public String getMessage() {
-		return Message;
+		return message;
 	}
 
 	public void setMessage(String message) {
-		Message = message;
+		this.message = message;
+	}
+
+	public String getAdresse() {
+		return adresse;
+	}
+
+	public void setAdresse(String adresse) {
+		this.adresse = adresse;
 	}
 
 	public Date getDate() {
@@ -82,22 +104,6 @@ public class Devis implements Serializable {
 		this.date = date;
 	}
 
-	public Date getHeure() {
-		return heure;
-	}
-
-	public void setHeure(Date heure) {
-		this.heure = heure;
-	}
-
-
-	public User getClient() {
-		return client;
-	}
-
-	public void setClient(User client) {
-		this.client = client;
-	}
 
 	public Annonce getAnnonce() {
 		return annonce;
@@ -107,6 +113,14 @@ public class Devis implements Serializable {
 		this.annonce = annonce;
 	}
 
+	public User getClient() {
+		return client;
+	}
+
+	public void setClient(User client) {
+		this.client = client;
+	}
+
 	public DBFiles getFichier() {
 		return fichier;
 	}
@@ -114,9 +128,41 @@ public class Devis implements Serializable {
 	public void setFichier(DBFiles fichier) {
 		this.fichier = fichier;
 	}
-	
-	
-	
+
+
+
+	public Date getTime() {
+		return time;
+	}
+
+
+
+	public void setTime(Date time) {
+		this.time = time;
+	}
+
+
+
+	public String getEtat() {
+		return etat;
+	}
+
+
+	public void setEtat(String etat) {
+		this.etat = etat;
+	}
+
+
+
+	public User getAnnonceur() {
+		return annonceur;
+	}
+
+
+
+	public void setAnnonceur(User Annonceur) {
+		 annonceur = Annonceur;
+	}
 	
 	
 	

@@ -41,9 +41,10 @@ public class AnnoncesConroller {
 			return annoncesService.getannonce(id);
 	 }
 	 
-	 @PostMapping("/add/service/{id}")
-	    public AnnonceService addAnnonce(@RequestBody AnnonceService as, @PathVariable Long id, @RequestParam("file") MultipartFile file) throws IOException {
-		 DBFiles dbFile = dbfilesService.storeFile(file);
+	 @PostMapping("/add/{idfile}/service/{id}")
+	    public AnnonceService addAnnonce(@RequestBody AnnonceService as,@PathVariable Long idfile, @PathVariable Long id) {
+		 DBFiles dbFile = new DBFiles();
+		 dbFile.setId(idfile);
 		 as.setImage(dbFile);
 	        return annoncesService.savingAnnonceService(as,id);
 	 }

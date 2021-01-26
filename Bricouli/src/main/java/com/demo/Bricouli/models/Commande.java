@@ -31,6 +31,10 @@ public class Commande implements Serializable{
 	@ManyToOne
 	private Annonce annonce;
 	
+	@ManyToOne
+	private Annonceur annonceur;
+	
+	
 	public Commande() {
 		super();
 	}
@@ -130,5 +134,15 @@ public class Commande implements Serializable{
 	public void setDateLivPrevu(String dateLivPrevu) {
 		DateLivPrevu = dateLivPrevu;
 	}
+
+	public Annonceur getAnnonceur() {
+		return annonceur;
+	}
+
+	public void setAnnonceur(Annonceur annonceur) {
+		this.annonceur = annonceur;
+	}
+	
+	
 	
 }

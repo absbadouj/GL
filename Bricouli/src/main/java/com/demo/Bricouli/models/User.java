@@ -2,6 +2,7 @@ package com.demo.Bricouli.models;
 
 import java.io.Serializable;
 import java.sql.Blob;
+import java.util.Date;
 
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
@@ -30,6 +31,8 @@ public class User implements Serializable {
 	private Boolean Confirmed;
 	private String passe;
 	private Boolean Annonceur;
+	private Date dateinscrit = new Date();
+	private Date lastlogging;
 	@OneToOne
 	private DBFiles Image;
 	
@@ -148,6 +151,17 @@ public class User implements Serializable {
 	public void setImage(DBFiles image) {
 		Image = image;
 	}
+	
+
+	public Date getLastlogging() {
+		return lastlogging;
+	}
+
+	public void setLastlogging(Date lastlogging) {
+		this.lastlogging = lastlogging;
+	}
+	
+	
 
 
 }

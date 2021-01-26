@@ -43,7 +43,7 @@ public class DBFilesController {
                 .toUriString();
 
         return new UploadFileResponse(dbFile.getFileName(), fileDownloadUri,
-                file.getContentType(), file.getSize());
+                file.getContentType(), file.getSize(), dbFile.getId() );
     }
     
     @GetMapping("/downloadFile/{fileId}")

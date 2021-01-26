@@ -15,7 +15,7 @@ public class Avis implements Serializable {
 	private Long idAvis;
 	private String Message;
 	private int Stars;
-	private Date date;
+	private Date date = new Date();
 	
 	@ManyToOne
 	private User Client;

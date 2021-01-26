@@ -6,12 +6,14 @@ public class UploadFileResponse {
     private String fileDownloadUri;
     private String fileType;
     private long size;
+    private long idfile;
 
-    public UploadFileResponse(String fileName, String fileDownloadUri, String fileType, long size) {
+    public UploadFileResponse(String fileName, String fileDownloadUri, String fileType, long size, long idfile) {
         this.fileName = fileName;
         this.fileDownloadUri = fileDownloadUri;
         this.fileType = fileType;
         this.size = size;
+        this.idfile = idfile;
     }
 
     public String getFileName() {
@@ -45,4 +47,14 @@ public class UploadFileResponse {
     public void setSize(long size) {
         this.size = size;
     }
+
+	public long getIdfile() {
+		return idfile;
+	}
+
+	public void setIdfile(long idfile) {
+		this.idfile = idfile;
+	}
+    
+    
 }

@@ -1,5 +1,6 @@
 package com.demo.Bricouli.services;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -45,7 +46,8 @@ public class UsersService {
 	public User connexion(String email, String password) {
 		User u = userRepository.findByEmailAndPasse(email,password);
 		if (u == null) return null;
-		else return u;
+		else u.setLastlogging(new Date());
+		return u;
 	}
 	
 	// update to seller 
